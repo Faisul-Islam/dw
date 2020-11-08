@@ -1,0 +1,45 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package daffodilwater;
+
+/**
+ *
+ * @author mahin
+ */
+public class Supervisor{
+    private String name;
+    private int id;
+
+    public Supervisor(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void supervise(RegisteredCustomer arr[],int r){
+        for(int i = 0;i < r;i++){
+            if(arr[i].getTotalOrderedAmount() > 5000){
+                System.out.println("User " + arr[i].getName()+ " got 10% discount and total price is " + (arr[i].getTotalOrderedAmount() * 102) * (10/100));
+            }else{
+                System.out.println("User " + arr[i].getName() + " got no discount");
+            }
+        }
+    }
+}
